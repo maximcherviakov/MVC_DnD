@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="560" prefWidth="830.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mvc_dnd.Controller.Controller">
+    <children>
+        <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columnConstraints>
+                <ColumnConstraints maxWidth="200.0" prefWidth="200.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="NEVER" />
+                <ColumnConstraints halignment="LEFT" hgrow="NEVER" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <VBox alignment="TOP_CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <children>
+                        <Label text="DnD Character Creator">
+                            <padding>
+                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                            </padding>
+                        </Label>
+                        <GridPane>
+                            <columnConstraints>
+                                <ColumnConstraints minWidth="50.0" prefWidth="50.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="Name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <TextField fx:id="nameField" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                            </children>
+                            <padding>
+                                <Insets bottom="3.0" top="3.0" />
+                            </padding>
+                        </GridPane>
+                        <GridPane>
+                            <columnConstraints>
+                                <ColumnConstraints minWidth="50.0" prefWidth="50.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="Race" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <ComboBox fx:id="raceComboBox" maxWidth="1.7976931348623157E308" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Dwarf" />
+                                            <String fx:value="Human" />
+                                        </FXCollections>
+                                    </items>
+                                </ComboBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="3.0" top="3.0" />
+                            </padding>
+                        </GridPane>
+                        <GridPane>
+                            <columnConstraints>
+                                <ColumnConstraints minWidth="50.0" prefWidth="50.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="Class" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <ComboBox fx:id="classComboBox" maxWidth="1.7976931348623157E308" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Barbarian" />
+                                            <String fx:value="Bard" />
+                                        </FXCollections>
+                                    </items>
+                                </ComboBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="3.0" top="3.0" />
+                            </padding>
+                        </GridPane>
+
+                        <VBox>
+                            <GridPane>
+                                <columnConstraints>
+                                    <ColumnConstraints minWidth="80.0" />
+                                    <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                <children>
+                                    <Label text="Attributes:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                    <Button fx:id="generateButton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#onGenerateAttribsButtonClick" text="Generate" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                        <padding>
+                                            <Insets bottom="4.0" left="12.0" right="12.0" top="4.0" />
+                                        </padding>
+                                    </Button>
+                                </children>
+                                <padding>
+                                    <Insets bottom="3.0" top="3.0" />
+                                </padding>
+                            </GridPane>
+                            <GridPane>
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" minWidth="50.0" prefWidth="50.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                <children>
+                                    <Label text="STR" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                        <GridPane.margin>
+                                            <Insets right="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <TextField fx:id="STRField" editable="false" maxWidth="1.7976931348623157E308" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" right="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                </children>
+                                <padding>
+                                    <Insets bottom="3.0" top="3.0" />
+                                </padding>
+                                <VBox.margin>
+                                    <Insets top="8.0" />
+                                </VBox.margin>
+                            </GridPane>
+                            <GridPane>
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" minWidth="50.0" prefWidth="50.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                <children>
+                                    <Label text="DEX" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                        <GridPane.margin>
+                                            <Insets right="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <TextField fx:id="DEXField" editable="false" maxWidth="1.7976931348623157E308" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" right="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                </children>
+                                <padding>
+                                    <Insets bottom="3.0" top="3.0" />
+                                </padding>
+                                <VBox.margin>
+                                    <Insets />
+                                </VBox.margin>
+                            </GridPane>
+                            <GridPane>
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" minWidth="50.0" prefWidth="50.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                <children>
+                                    <Label text="CON" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                        <GridPane.margin>
+                                            <Insets right="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <TextField fx:id="CONField" editable="false" maxWidth="1.7976931348623157E308" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" right="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                </children>
+                                <padding>
+                                    <Insets bottom="3.0" top="3.0" />
+                                </padding>
+                                <VBox.margin>
+                                    <Insets />
+                                </VBox.margin>
+                            </GridPane>
+                            <GridPane>
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" minWidth="50.0" prefWidth="50.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                <children>
+                                    <Label text="INT" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                        <GridPane.margin>
+                                            <Insets right="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <TextField fx:id="INTField" editable="false" maxWidth="1.7976931348623157E308" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" right="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                </children>
+                                <padding>
+                                    <Insets bottom="3.0" top="3.0" />
+                                </padding>
+                                <VBox.margin>
+                                    <Insets />
+                                </VBox.margin>
+                            </GridPane>
+                            <GridPane>
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" minWidth="50.0" prefWidth="50.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                <children>
+                                    <Label text="WIS" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                        <GridPane.margin>
+                                            <Insets right="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <TextField fx:id="WISField" editable="false" maxWidth="1.7976931348623157E308" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" right="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                </children>
+                                <padding>
+                                    <Insets bottom="3.0" top="3.0" />
+                                </padding>
+                                <VBox.margin>
+                                    <Insets />
+                                </VBox.margin>
+                            </GridPane>
+                            <GridPane>
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" minWidth="50.0" prefWidth="50.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                <children>
+                                    <Label text="CHA" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                        <GridPane.margin>
+                                            <Insets right="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <TextField fx:id="CHAField" editable="false" maxWidth="1.7976931348623157E308" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" right="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                </children>
+                                <padding>
+                                    <Insets bottom="3.0" top="3.0" />
+                                </padding>
+                                <VBox.margin>
+                                    <Insets />
+                                </VBox.margin>
+                            </GridPane>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </VBox>
+                        <GridPane VBox.vgrow="NEVER">
+                            <columnConstraints>
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints vgrow="SOMETIMES" />
+                            </rowConstraints>
+
+                            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#onSaveButtonClick" text="Save" GridPane.columnIndex="0">
+                                <VBox.margin>
+                                    <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                                </VBox.margin>
+                                <padding>
+                                    <Insets bottom="6.0" left="20.0" right="20.0" top="6.0" />
+                                </padding>
+                        <GridPane.margin>
+                           <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                        </GridPane.margin>
+                            </Button>
+                            <Button fx:id="returnButton" mnemonicParsing="false" onAction="#onReturnButtonClick" text="Return" GridPane.columnIndex="1">
+                                <VBox.margin>
+                                    <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                                </VBox.margin>
+                                <padding>
+                                    <Insets bottom="6.0" left="20.0" right="20.0" top="6.0" />
+                                </padding>
+                        <GridPane.margin>
+                           <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                        </GridPane.margin>
+                            </Button>
+                        </GridPane>
+
+                    </children>
+                    <padding>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                    </padding>
+                </VBox>
+                <VBox alignment="TOP_CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                    <children>
+                        <Button fx:id="createCharacterButton" mnemonicParsing="false" onAction="#onCreateCharacterButtonClick" text="Create Character">
+                            <VBox.margin>
+                                <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                            </VBox.margin>
+                            <padding>
+                                <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                            </padding>
+                        </Button>
+                        <ListView fx:id="charactersListView" maxWidth="300.0" minHeight="200.0" minWidth="100.0" onMouseClicked="#onCharactersListViewClick" prefHeight="300.0" prefWidth="300.0" styleClass="text-field">
+                            <VBox.margin>
+                                <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                            </VBox.margin>
+                        </ListView>
+                        <Button fx:id="saveJsonButton" layoutX="100.0" layoutY="16.0" mnemonicParsing="false" onAction="#onSaveJsonButtonClick" text="Save JSON">
+                            <VBox.margin>
+                                <Insets bottom="6.0" left="6.0" right="6.0" top="10.0" />
+                            </VBox.margin>
+                            <padding>
+                                <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                            </padding>
+                        </Button>
+                    </children>
+                </VBox>
+                <VBox alignment="TOP_CENTER" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="BASELINE">
+                    <children>
+                        <TextArea fx:id="infoTextArea" editable="false" maxWidth="300.0" prefHeight="200.0" prefWidth="300.0" styleClass="text-field">
+                            <VBox.margin>
+                                <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                            </VBox.margin>
+                        </TextArea>
+                        <TextArea fx:id="jsonTextArea" editable="false" layoutX="16.0" layoutY="16.0" maxHeight="1.7976931348623157E308" maxWidth="300.0" prefHeight="300.0" prefWidth="300.0" styleClass="text-field">
+                            <VBox.margin>
+                                <Insets bottom="6.0" left="6.0" right="6.0" top="20.0" />
+                            </VBox.margin>
+                        </TextArea>
+                    </children>
+                </VBox>
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,31 @@
+.button {
+    -fx-background-color: #367BF5;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: Roboto Light;
+    -fx-font-size: 14;
+    -fx-font-weight: Bold;
+    -fx-background-radius: 4;
+}
+
+.remove-button {
+    -fx-background-color: #F23535;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: Roboto Light;
+    -fx-font-size: 14;
+    -fx-font-weight: Bold;
+    -fx-background-radius: 4;
+}
+
+.text-field {
+    -fx-background-color: #ffffff;
+    -fx-font-family: Roboto Light;
+    -fx-font-size: 14;
+    -fx-background-radius: 4
+}
+
+.label {
+    -fx-background-color: #00000000;
+    -fx-font-family: Roboto Light;
+    -fx-font-size: 14;
+    -fx-background-radius: 4
+}
